@@ -34,10 +34,6 @@ KanBan Board es una herramienta de gestión de tareas y proyectos que te permite
 
 Si deseas contribuir a este proyecto, por favor crea un fork del repositorio y envía un pull request con tus cambios.
 
-## Licencia
-
-Este proyecto está bajo la licencia **MIT**. Consulta el archivo `LICENSE` para obtener más información.
-
 ## Autor
 
 [Santiago Villanueva](https://github.com/savillanuevaGH)
