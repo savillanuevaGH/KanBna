@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://api.fontshare.com/v2/css?f[]=author@300,400,500,600,700,1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/style.css">
+    <title>KanBna Board 📄</title>
+</head>
+<body>
+    <header class="header">
+        <h1>
+            KanBna 📄
+        </h1>
+        <button id="mode-btn" data-mode="light">
+            Modo
+            <span id="mode-icon">☀️</span>
+          </button>
+    </header>
+
+    <main>
+        <div class="form">
+            <fieldset id="add-item-form">
+                <legend>
+                    <h4>Add a new task</h4>
+                </legend>
+                    
+                <input type="text" placeholder="New task..." id="new-task-text">
+                <button type="submit" id="add-btn">ADD</button>
+            </fieldset>
+        </div>
+        <div class="boards">
+            <fieldset class="board-fieldset">
+                <legend class="board-legend">TO DO</legend>
+                <div class="board" id="todo-board">
+                    <!-- Items will be added here -->
+                </div>
+            </fieldset>
+
+            <fieldset class="board-fieldset">
+                <legend class="board-legend">DOING</legend>
+                <div class="board" id="doing-board">
+                    <!-- Items will be added here -->
+                </div>
+            </fieldset>
+
+            <fieldset class="board-fieldset">
+                <legend class="board-legend">DONE</legend>
+                <div class="board" id="done-board">
+                    <!-- Items will be added here -->
+                </div>
+            </fieldset>
+        </div>
+    </main>
+    <script src="/scripts/index.js" defer></script>
+</body>
+</html>

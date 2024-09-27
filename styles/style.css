@@ -1,0 +1,251 @@
+:root {
+    --mode-icon: '☀️'; /* valor por defecto */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+
+    border: none;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Author', sans-serif;
+    background: linear-gradient(#fff, #dbdbdb, #b8b8b8, #dbdbdb, #fff);
+    background-repeat: no-repeat;
+    background-size: cover cover;
+
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: .5rem;
+
+    width: 100%;
+    min-height: 4em;
+
+    border-bottom: 1px solid #777;
+    background-color: rgb(225, 225, 225);
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form {
+    padding: .5rem;
+    margin: .5em;
+}
+
+#add-item-form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+    padding: .8em;
+
+    border-radius: 5px;
+    background-color: rgb(190, 190, 190);
+    box-shadow: 0 0 15px black;
+}
+
+#new-task-text{
+    width: 100%;
+    height: 6em;
+
+    margin-right: 10px;
+    padding-left: 10px;
+
+    border-radius: 0 5px 5px 0;
+    outline-color: darkgray;
+    background-color: rgba(250, 250, 250, .5);
+}
+
+button {
+    display: flex;
+    justify-content: center;
+
+    height: 100%;
+
+    padding: 20px;
+
+    line-height: 2;
+    font-size: .7em;
+    font-weight: 800;
+
+    border-radius: 10px;
+    background-color: rgb(250, 250, 250);
+    box-shadow: 0 0 5px black;
+
+    &:active {
+        color: white;
+        background-color: rgb(200, 200, 200);
+    }
+}
+
+#mode-btn {
+    font-size: .8em;
+    padding: 10px;
+    text-align: center;
+
+    border: 1px solid grey;
+}
+
+#mode-icon {
+    font-size: 1.6em;
+    line-height: 1.2;
+}
+
+.form fieldset legend {
+    padding: .4em;
+
+    border-radius: 5px;
+    background-color: rgb(190, 190, 190);
+}
+
+.form fieldset legend h4 {
+    padding: 5px;
+    
+    font-weight: 600;
+
+    border-radius: 5px 5px 0 0;
+    background-color: rgb(250, 250, 250);
+}
+
+.boards {
+    height: min-content;
+    display: flex;
+    justify-content: space-between;
+    gap: 1.5rem;
+}
+
+.board-fieldset {
+    width: 30vh;
+    height: max-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 235, 235);
+    
+    box-shadow: 0 0 20px black;
+}
+
+.board-legend {
+    width: 50%;
+
+    margin-bottom: 5px;
+
+    text-align: center;
+
+    font-size: 1.5em;
+    font-weight: bold;
+
+    border-radius: 5px 5px 0 0;
+
+    background-color: whitesmoke;
+}
+
+.board {
+    display: flex;
+    flex-direction: column;
+    min-width: 30vw;
+    min-height: 100px;
+    max-height: max-content;
+    padding: 0;
+    align-items: center;
+}
+
+.item {
+    margin: 8px;
+    padding-block: 5px;
+    padding-inline: 20px;
+
+    word-break: break-all;
+    max-width: 200px; /* ajusta el ancho máximo */
+    text-wrap: pretty;
+
+
+    border-radius: 5px;
+
+    box-shadow: 0 0 1px black;
+    background-color: rgb(250, 250, 250);
+}
+
+/* Modo oscuro/claro */
+.dark-mode {
+    background-color: #333;
+}
+  
+.dark-mode header {
+    background-color: #444;
+    color: #fff;
+    border-bottom: 1px solid #333;
+}
+  
+.dark-mode .board-fieldset {
+    background-color: #555;
+    box-shadow: 0 0 20px white;
+}
+  
+.dark-mode .board-legend {
+    background-color: #666;
+    color: #fff;
+}
+  
+.dark-mode .item {
+    background-color: #777;
+    color: #fff;
+}
+
+.dark-mode #mode-btn {
+    border: 1px solid gold;
+    box-shadow: 0 0 5px goldenrod;
+}
+
+/* Media query para dispositivos móviles */
+@media only screen and (max-width: 768px) {
+  /* Ajusta el ancho de los elementos para que se adapten a la pantalla móvil */
+  body {
+    height: 100%;
+  }
+
+  .boards {
+    flex-direction: column;
+  }
+  .board-fieldset {
+    width: 100%;
+  }
+  .board-legend {
+    font-size: 1.2em;
+  }
+  .item {
+    margin: 5px;
+    padding: 10px;
+  }
+}
+
+/* Media query para tablets y desktops */
+@media only screen and (min-width: 769px) {
+  /* Ajusta el ancho de los elementos para que se adapten a la pantalla de tablet o desktop */
+  body {
+    height: 100vh;
+  }
+  .boards {
+    flex-direction: row;
+  }
+  .board-fieldset {
+    width: 30%;
+  }
+  .item {
+    margin: 10px;
+    padding: 20px;
+  }
+}
