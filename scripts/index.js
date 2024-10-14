@@ -19,6 +19,11 @@ addButton.addEventListener('click', (e) => {
     todoBoard.appendChild(newTask);
     itemId++;
     document.getElementById('new-task-text').value = '';
+
+    // Agregar evento dragstart al nuevo elemento
+    newTask.addEventListener('dragstart', (e) => {
+      e.dataTransfer.setData('text', newTask.id);
+    });
   }
 });
 
@@ -51,6 +56,28 @@ doneBoard.addEventListener('drop', (e) => {
   item.style.top = e.clientY + 'px';
   item.style.left = e.clientX + 'px';
 });
+
+doneBoard.addEventListener('drop', (e) => {
+  e.preventDefault();
+  const itemId = e.dataTransfer.getData('text');
+  const item = document.getElementById(itemId);
+  doneBoard.appendChild(item);
+  item.style.top = e.clientY + 'px';
+  item.style.left = e.clientX + 'px';
+
+  // Agregar botón de eliminación
+  const deleteBtn = document.createElement('button');
+  deleteBtn.innerText = 'Delete';
+  deleteBtn.classList.add('delete-btn');
+  deleteBtn.addEventListener('click', deleteItem);
+  item.appendChild(deleteBtn);
+});
+
+// Función eliminar item
+function deleteItem(e) {
+  const item = e.target.parentElement;
+  item.remove();
+}
 
 // Modo oscuro/claro
 const modeBtn = document.getElementById('mode-btn');
